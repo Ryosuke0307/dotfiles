@@ -17,6 +17,7 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'tpope/vim-fugitive'
 call neobundle#end()
 
 " Required:
