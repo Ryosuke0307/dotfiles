@@ -6,7 +6,7 @@
 [help]
 	autocorrect = 1
 [alias]
-	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+	db = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
   st = status
   cm = commit
   b = branch

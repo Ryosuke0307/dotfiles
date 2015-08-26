@@ -114,4 +114,5 @@ match ZenkakuSpace /　/
 augroup rbsyntaxcheck
 	autocmd!
 	autocmd BufWrite *.rb w !ruby -c
+  autocmd BufWritePre * :%s/\s\+$//ge
 augroup END
