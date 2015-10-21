@@ -9,25 +9,29 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 " neobundle自体をneobundleで管理
 NeoBundleFetch 'Shougo/neobundle.vim'
-"   
+"
 " 今後このあたりに追加のプラグインをどんどん書いて行きます！！"
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'scrooloose/nerdtree'
 call neobundle#end()
 
 " Required:
-filetype plugin indent on      
+filetype plugin indent on
 
 " 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
 " 毎回聞かれると邪魔な場合もあるので、この設定は任意です。
 NeoBundleCheck
-"       
+"
 "-------------------------
 " End Neobundle Settings.
 "-------------------------
+
+" キーバインド
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 " 環境設定系
 " シンタックスハイライト

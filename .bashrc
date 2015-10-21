@@ -20,3 +20,11 @@ GIT_PS1_SHOWSTASHSTATE=1
 # \$ $
 export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 ##############
+
+function grepall() {
+  git ls-files | xargs grep -l $1
+}
+
+function sedall()  {
+  grepall $1 | xargs sed -i -e "s/$1/$2/g"
+}
