@@ -2,11 +2,12 @@
   ui = auto
 [core]
   editor = /usr/bin/vim
-  excludesfile = /Users/ryosuke/.gitignore
+	excludesfile = /Users/ryosuke/.gitignore
 [help]
   autocorrect = 1
 [alias]
   db = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+  rmall = rm `git ls-files --deleted`
   st = status
   cm = commit
   b = branch

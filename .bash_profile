@@ -1,7 +1,7 @@
 eval "$(rbenv init -)"
 eval "$(hub alias -s)"
 
-export DYLD_FALLBACK_LIBRARY_PATH=$DYLD_FALLBACK_LIBRARY_PATH:/usr/local/mysql/lib 
+export DYLD_FALLBACK_LIBRARY_PATH=$DYLD_FALLBACK_LIBRARY_PATH:/usr/local/mysql/lib
 export PATH=$PATH:/usr/local/mysql/bin
 
 if [ -f ~/.bashrc ] ; then

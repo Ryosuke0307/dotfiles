@@ -17,6 +17,7 @@ NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'kchmck/vim-coffee-script'
 call neobundle#end()
 
 " Required:
