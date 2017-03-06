@@ -7,7 +7,7 @@
   autocorrect = 1
 [alias]
   db = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
-  rmall = rm `git ls-files --deleted`
+  rmall = !git ls-files --deleted | xargs git rm
   st = status
   cm = commit
   b = branch

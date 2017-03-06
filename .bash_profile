@@ -13,6 +13,7 @@ export PATH="/usr/local/bin:$PATH"
 
 alias ll="ls -l --color=auto"
 alias ls="ls --color=auto"
+alias ip_address='ipconfig getifaddr en0'
 
 # The next line updates PATH for the Google Cloud SDK.
 source '/Users/ryosuke/google-cloud-sdk/path.bash.inc'
