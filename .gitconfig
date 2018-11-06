@@ -2,7 +2,7 @@
   ui = auto
 [core]
   editor = /usr/bin/vim
-	excludesfile = /Users/ryosuke/.gitignore
+	excludesfile = /home/ryo-sk/.gitignore
 [help]
   autocorrect = 1
 [alias]
@@ -12,3 +12,8 @@
   cm = commit
   b = branch
   co = checkout
+[user]
+	email = funny_interesting_ryo@yahoo.co.jp
+	name = Ryosuke0307
+[init]
+	templatedir = .git_tmp

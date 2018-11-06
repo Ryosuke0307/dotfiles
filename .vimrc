@@ -1,4 +1,3 @@
-"---------------------------
 "" Start Neobundle Settings.
 "---------------------------
 "" bundleで管理するディレクトリを指定
@@ -18,6 +17,8 @@ NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'soramugi/auto-ctags.vim'
+NeoBundle 'fuenor/im_control.vim'
 call neobundle#end()
 
 " Required:
@@ -30,6 +31,17 @@ NeoBundleCheck
 "-------------------------
 " End Neobundle Settings.
 "-------------------------
+
+"Ctags
+"保存時に実行
+" let g:auto_ctags = 1
+"保存先のディレクトリ指定
+" let g:auto_ctags_directory_list = ['.git']
+"生成されるctagsのファイル名
+" let g:auto_ctags_tags_name = 'tags'
+"ctagsのオプション
+" let g:auto_ctags_tags_args = '--tag-relative --recurse --sort=yes --langmap=RUBY:.rb --exclude="*.js"  --exclude=".git*" -R'
+
 
 " キーバインド
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
@@ -54,7 +66,7 @@ set nobackup
 " バックスペースで各種消せるようにする
 set backspace=indent,eol,start
 " OSのクリップボードを使う
-set clipboard=unnamed,autoselect
+set clipboard=unnamedplus
 " 行番号を表示
 set number
 " 右下に表示される行・列の番号を表示する
@@ -115,9 +127,29 @@ set autoindent
 set smartindent
 " 全角スペースを視覚化
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
+
 match ZenkakuSpace /　/
 augroup rbsyntaxcheck
 	autocmd!
 	autocmd BufWrite *.rb w !ruby -c
   autocmd BufWritePre * :%s/\s\+$//ge
 augroup END
+" ノーマルモード時だけ ; と : を入れ替える
+nnoremap ; :
+nnoremap : ;
+
+" 「日本語入力固定モード」の動作モード
+let IM_CtrlMode = 1
+" 「日本語入力固定モード」切替キー
+inoremap <silent> <C-j> <C-r>=IMState('FixMode')<CR>
+
+" IBus 1.5以降
+function! IMCtrl(cmd)
+  let cmd = a:cmd
+  if cmd == 'On'
+    let res = system('ibus engine "mozc-jp"')
+  elseif cmd == 'Off'
+    let res = system('ibus engine "xkb:us::eng"')
+  endif
+  return ''
+endfunction

@@ -1,3 +1,6 @@
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
 # スクリプト読み込み
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
@@ -33,3 +36,16 @@ function sedall()  {
 function tenki() {
   curl wttr.in/$1
 }
+
+alias ll="ls -l --color=auto"
+alias ls="ls --color=auto"
+alias ip_address='ipconfig getifaddr en0'
+alias pbcopy='xsel --clipboard --input'
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/home/ryo-sk/google-cloud-sdk/path.bash.inc'
+
+# The next line enables bash completion for gcloud.
+source '/home/ryo-sk/google-cloud-sdk/completion.bash.inc'
+export PATH="$HOME/.ndenv/bin:$PATH"
+eval "$(ndenv init -)"
